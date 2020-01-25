@@ -1,9 +1,8 @@
 export interface IProduct {
     id: number;
-    productName: string;
-    modelCode: string;
-    serialNumber: string;
+    name: string;
     price: number;    
-    starRating: number;
-    // imageUrl: string;
+    quantityInStock: number;
+    stockUpdatedOn: string;    
+    starRating: number;    
 }

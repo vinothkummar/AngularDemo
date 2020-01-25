@@ -1,3 +1,11 @@
 thead{
     color: #337AB7
 }
+
+td{    
+    vertical-align: middle;
+}
+
+.alignCenter{
+    text-align: center;  
+}

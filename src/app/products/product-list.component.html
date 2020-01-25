@@ -18,33 +18,33 @@
             <table class='table' *ngIf='products && products.length'>
             <thead>
                 <tr>
-                    <th>
+                    <!-- <th>
                         <button class='btn btn-primary' (click)='toggleImage()'>
                             {{showImage ? 'Hide': 'Show'}} Image
                         </button>
-                    </th>
-                    <th>Product Name</th>
-                    <th>Model Code</th>
-                    <th>SerialNumber</th>
+                    </th> -->
+                    <th>Grocery Name</th>
                     <th>Price</th>
+                    <th class="alignCenter">Quantity In Stock</th>
+                    <th class="alignCenter">Stock Updated On</th>
                     <th>5 Star Rating</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor='let product of filteredProducts'>
-                    <td>
+                    <!-- <td>
                         <img  *ngIf ='showImage'
                             [src]='product.imageUrl' [title]='product.productName' [style.width.px]='imageWidth' [style.margin.px]='imageMargin'>
-                    </td>
+                    </td> -->
                     <td>
                         <a [routerLink]="['/products', product.id]">
-                            {{ product.productName }}
+                            {{ product.name | titlecase }}
                         </a>
-                    </td>
-                    <td>{{ product.modelCode | lowercase | convertToSpaces: '-'}}</td>
-                    <td>{{ product.serialNumber }}</td>
-                    <td>{{ product.price | currency:'GBP':'symbol':'1.2-2' }}</td>
-                    <td>
+                    </td>                    
+                    <td>{{ product.price | currency:'GBP':'symbol':'1.2-2'}}</td>
+                    <td class="alignCenter">{{ product.stockQty }}</td>
+                    <td class="alignCenter">{{ product.stockUpdatedOn | date: 'dd/MM/yyyy'}}</td>
+                    <td> 
                         <pm-star [rating]='product.starRating'
                                  (ratingClicked)='onRatingClicked($event)'></pm-star>
                     </td>

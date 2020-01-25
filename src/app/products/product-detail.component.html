@@ -9,19 +9,19 @@
       <div class='col-md-8'>
         <div class='row'>
           <div class='col-md-4'>Name:</div>
-          <div class='col-md-8'>{{product.productName}}</div>
-        </div>
-        <div class='row'>
-          <div class='col-md-4'>Code:</div>
-          <div class='col-md-8'>{{product.modelCode | lowercase | convertToSpaces: '-'}}</div>
-        </div>        
-        <div class='row'>
-          <div class='col-md-4'>SerialNumber:</div>
-          <div class='col-md-8'>{{product.serialNumber}}</div>
+          <div class='col-md-8'>{{product.name | titlecase}}</div>
         </div>
         <div class='row'>
           <div class='col-md-4'>Price:</div>
-          <div class='col-md-8'>{{product.price|currency:'EUR':'symbol'}}</div>
+          <div class='col-md-8'>{{product.price | currency:'GBP':'symbol':'1.2-2'}}</div>
+        </div>        
+        <div class='row'>
+          <div class='col-md-4'>Quantity In Stock:</div>
+          <div class='col-md-8'>{{product.stockQty}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>Stock Updated On:</div>
+          <div class='col-md-8'>{{product.stockUpdatedOn | date: 'dd/MM/yyyy'}}</div>
         </div>
         <div class='row'>
           <div class='col-md-4'>5 Star Rating:</div>
@@ -32,13 +32,13 @@
         </div>
       </div>
 
-      <div class='col-md-4'>
+      <!-- <div class='col-md-4'>
         <img class='center-block img-responsive'
              [style.width.px]='200'
              [style.margin.px]='2'
              [src]='product.imageUrl'
              [title]='product.productName'>
-      </div>
+      </div> -->
     </div>
   </div>
 

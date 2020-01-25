@@ -10,7 +10,7 @@ import { catchError, tap, map } from 'rxjs/operators';
 })
 export class ProductService {
     private headers: HttpHeaders;
-    private accessPointUrl = 'http://localhost:5000/v1/products'
+    private accessPointUrl = 'https://localhost:44321/api/store/All'
 
     constructor(private http: HttpClient){
         this.headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
