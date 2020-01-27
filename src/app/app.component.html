@@ -7,12 +7,16 @@
 </div> -->
 
 <nav class='navbar navbar-expand navbar-light bg-light'>
-       <a class='navbar-brand'>{{pageTitle}}</a>
-       <ul class='nav navbar-nav'>
-         <li><a class='nav-link' [routerLink]="['/welcome']">Home</a></li>
-         <li><a class='nav-link' [routerLink]="['/products']">Product List</a></li>
-       </ul>
+  <a class='navbar-brand'>{{pageTitle}}</a>
+  <ul class='nav navbar-nav'>
+    <li><a class='nav-link' [routerLink]="['/welcome']">Home</a></li>
+    <li><a class='nav-link' [routerLink]="['/products']">Grocery List</a></li>
+    <li class='nav-item'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
+         [routerLink]="['/products/0/edit']">Add Grocery</a>
+     </li>
+
+   </ul>
 </nav>   
 <div class='container'>
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 </div> 

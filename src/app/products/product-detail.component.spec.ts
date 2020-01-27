@@ -12,6 +12,6 @@ describe(`App Component`, () => {
   })
   
   it(`should have a title of 'app'`, () => {    
-      expect(component.pageTitle).toEqual('Samsung: Product Management')
+      expect(component.pageTitle).toEqual(': Product Management')
   });
 });
