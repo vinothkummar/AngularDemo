@@ -4,7 +4,7 @@ export interface Product {
     productName: string;
     price: number;    
     productQty: number;
-    stockUpdatedOn: string; 
-    starRating: number;
+    stockUpdatedOn: Date; 
+    // starRating: number;
 }
 

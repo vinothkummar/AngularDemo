@@ -12,10 +12,10 @@ import { Product } from './product';
 export class ProductService {
   // private productsUrl = 'api/products';
   private headers: HttpHeaders;
-  private accessPointUrl = 'https://localhost:44321/api/store/All'
-  private getByProductId = 'https://localhost:44321/api/store/ProductById'
-  private updateProuct = 'https://localhost:44321/api/store/UpdateProduct'
-  private CreateProduct = 'https://localhost:44321/api/store/CreateProduct'
+  private accessPointUrl = 'http://angbckndapi-dev.centralus.azurecontainer.io/api/store/all'
+  private getByProductId = 'angbckndapi-dev.centralus.azurecontainer.io/api/store/ProductById'
+  private updateProuct   =   'angbckndapi-dev.centralus.azurecontainer.io/api/store/UpdateProduct'
+  private CreateProduct  = 'angbckndapi-dev.centralus.azurecontainer.io/api/store/CreateProduct'
 
   constructor(private http: HttpClient) { 
     this.headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
@@ -46,7 +46,7 @@ export class ProductService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     product.id = null;
     product.price= 25;
-    product.stockUpdatedOn = "11/04/2015"
+    product.stockUpdatedOn = new Date("11/04/2015");
     return this.http.post<Product>(this.CreateProduct, product, { headers })
       .pipe(
         tap(data => console.log('createProduct: ' + JSON.stringify(data))),
@@ -99,8 +99,8 @@ export class ProductService {
       productName: null,
       price: 0,    
       productQty: 0,
-      stockUpdatedOn: null,
-      starRating:0
+      stockUpdatedOn: null
+     // starRating:0
     };
   }
 }
